@@ -6,7 +6,8 @@
     "scripts": {
         "start": "node seeds/index.js & node server.js",
         "npm seed": "node seeds/index.js",
-        "dev": "nodemon server.js"
+        "dev": "nodemon server.js",
+        "migrate": "npx sequelize-cli db:migrate"
     },
     "keywords": [
         "node",
@@ -25,7 +26,8 @@
         "express-handlebars": "^5.3.5",
         "express-session": "^1.17.3",
         "mysql2": "^2.3.0",
-        "sequelize": "^6.32.1"
+        "sequelize": "^6.32.1",
+        "sequelize-cli": "^6.2.0"
     },
     "devDependencies": {
         "nodemon": "^2.0.7"
