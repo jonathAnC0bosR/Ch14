@@ -1,0 +1,33 @@
+{
+    "name": "tech-blog",
+    "version": "1.0.0",
+    "description": "A CMS-style blog site",
+    "main": "server.js",
+    "scripts": {
+        "start": "node seeds/index.js & node server.js",
+        "npm seed": "node seeds/index.js",
+        "dev": "nodemon server.js"
+    },
+    "keywords": [
+        "node",
+        "express",
+        "mysql",
+        "sequelize",
+        "handlebars"
+    ],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^4.0.1",
+        "connect-session-sequelize": "^7.1.7",
+        "dotenv": "^10.0.0",
+        "express": "^4.18.2",
+        "express-handlebars": "^5.3.5",
+        "express-session": "^1.17.3",
+        "mysql2": "^2.3.0",
+        "sequelize": "^6.32.1"
+    },
+    "devDependencies": {
+        "nodemon": "^2.0.7"
+    }
+}

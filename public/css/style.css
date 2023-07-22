@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .dashboard {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 20px;
+  }
+  
+  .blog-post {
+    width: 30%;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .login-form, .signup-form {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    margin: auto;
+  }
+  
+  .login-form input, .signup-form input {
+    margin: 5px 0;
+    padding: 10px;
+  }
+  
