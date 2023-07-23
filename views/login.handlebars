@@ -1,7 +1,23 @@
-<h1>Login</h1>
+<div class="position-relative logFrm text-light">
+    <div class="px-2 bg-dark position-absolute top-50 start-50 translate-middle">
+        <div>
+            <form action="signup" id="login-form">
+                <h2>Log in </h2>
+                <div class="mb-3">
+                    <label class="form-label" for="username">Username</label>
+                    <input id="username-login" class="form-control" type="text">
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input id="password-login" type="password" class="form-control">
+                </div>
+                <div class="d-flex justify-content-center pb-2">
+                    <button type="submit" class="btn btn-light">Log in </button>
+                </div>
+                <p><a class="link-offset-2 link-underline link-underline-opacity-0" href="/signup">Sign up here</a></p>
+            </form>
+        </div>
+    </div>
+</div>
 
-<form class="login-form">
-    <input id="username-login" type="text" placeholder="Username" />
-    <input id="password-login" type="password" placeholder="Password" />
-    <button type="submit">Login</button>
-</form>
+<script src="/js/login.js"></script>

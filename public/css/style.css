@@ -1,37 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-  }
-  
-  header {
-    padding: 10px;
-    background-color: #333;
-    color: white;
-  }
-  
-  .dashboard {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin: 20px;
-  }
-  
-  .blog-post {
-    width: 30%;
-    margin: 10px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-  }
-  
-  .login-form, .signup-form {
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    margin: auto;
-  }
-  
-  .login-form input, .signup-form input {
-    margin: 5px 0;
-    padding: 10px;
-  }
-  
+div.post {
+    margin-top: 25px;
+}
+
+h2.post-title a {
+    text-decoration: none;
+}
+
+div.post-creator p {
+    color:white;
+    font-size: smaller;
+}
+
+h1.main-title {
+    width: 280px;
+    border-radius: 8px;
+}
+
+div.main-content {
+    height: 100vh;
+}
+
+form {
+    width: 400px;
+}
+
+form.new-post {
+    width: 800px;
+}
+
+div.sngForm, div.logFrm {
+    margin-top: 220px;
+}
+

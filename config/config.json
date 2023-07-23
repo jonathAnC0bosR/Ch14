@@ -1,20 +1,15 @@
-{
-  "development": {
-    "username": "your_database_user",
-    "password": "your_database_password",
-    "database": "your_database_name",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": "new_password",
-    "database": "blog_db",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
+module.exports = {
+    "development": {
+      "username": process.env.DB_USER,
+      "password": process.env.DB_PASSWORD,
+      "database": process.env.DB_NAME,
+      "host": "localhost",
+      "dialect": "mysql",
+      "port": 3306
+    },
+    "production": {
+      "use_env_variable": "JAWSDB_URL",
+      "dialect": "mysql"
+    }
   }
-}
+  
