@@ -1,12 +1,15 @@
 [
     {
-        "post_title": "Javascript is hard",
-        "post_content": "Working with javascript can be challenging sometimes",
-        "user_id": "1"
+      "name": "Madoonateka",
+      "description": "A mobile app about Maddona"
     },
     {
-        "post_title": "Fetch requests",
-        "post_content": "Post request are the hardest to work with!",
-        "user_id": "2"
+      "name": "The Ultimate REACT GUIDE",
+      "description": "Guide in gist"
+    },
+    {
+      "name": "BooBooBooks",
+      "description": "Find free or pay books"
     }
 ]
+  
