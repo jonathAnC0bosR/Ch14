@@ -1,17 +1,18 @@
 [
     {
-        "text": "Great app! I love it!",
-        "user_id": 1,
-        "post_id": 1
+      "text": "This is an amazing application. I'm impressed!",
+      "user_id": 1,
+      "post_id": 1
     },
     {
-        "text": "Very helpful. Thanks for sharing!",
-        "user_id": 2,
-        "post_id": 1
+      "text": "Extremely useful. Thanks a lot for sharing!",
+      "user_id": 2,
+      "post_id": 1
     },
     {
-        "text": "Awesome game. Can't stop playing!",
-        "user_id": 3,
-        "post_id": 3
+      "text": "I'm addicted to this game. It's so much fun!",
+      "user_id": 3,
+      "post_id": 3
     }
-]
+  ]
+  

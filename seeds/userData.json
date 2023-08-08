@@ -1,17 +1,18 @@
 [
     {
-        "name": "John Doe",
-        "email": "johndoe@example.com",
-        "password": "password1"
+      "name": "Alice Johnson",
+      "email": "alice.johnson@example.com",
+      "password": "P@ssw0rd1"
     },
     {
-        "name": "Jane Smith",
-        "email": "janesmith@example.com",
-        "password": "password2"
+      "name": "Bob Smith",
+      "email": "bob.smith@example.com",
+      "password": "S3cur3P@ssword"
     },
     {
-        "name": "Robert Johnson",
-        "email": "robertjohnson@example.com",
-        "password": "password3"
+      "name": "Eve Anderson",
+      "email": "eve.anderson@example.com",
+      "password": "MyStrongP@ss"
     }
-]
+  ]
+  

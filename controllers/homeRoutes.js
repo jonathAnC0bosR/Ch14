@@ -1,72 +1,128 @@
 const router = require('express').Router();
-const { Post, User, Comment } = require('../models');
+const { Project, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
+    // Get all projects and JOIN with user data
     const postData = await Post.findAll({
-        include: [
-            {
-                model: User,
-                attributes: ['name'],
-            },
-        ],
+      include: [
+        {
+          model: User,
+          attributes: ['username'],
+        },
+      ],
     });
-    const posts = postData.map((post) => post.get({ plain: true}));
 
-    res.render('homepage', { posts, name: req.session.name, logged_in: req.session.logged_in }); // Pass the posts variable to the template
+    // Serialize data so the template can read it
+    const projects = postData.map((post) => post.get({ plain: true }));
+
+    // Pass serialized data and session flag into template
+    res.render('homepage', { 
+      posts, 
+      logged_in: req.session.logged_in 
+    });
   } catch (err) {
-    console.log(err);
     res.status(500).json(err);
   }
 });
+
+router.get('/posts', async (req, res) => {
+  try {
+    const posts = await Post.findAll({
+      include: [
+        {
+          model: User,
+
+        },
+      ],
+    });
+res.status(200).json(posts);
+    } catch(err) {
+        res.status(500).json(err);
+    }
+})
 
 router.get('/post/:id', async (req, res) => {
-  try {
-    const postId = req.params.id; 
+    try {
+        
+        const postData = await Post.findByPk(req.params.id, {
+            include: [
+                { model: User }, { model: Comment, include: { model: User } }
+            ],
+        });
 
-    //fetch the post and its comments
-    const postData = await Post.findByPk(postId, {
-      include: [{ model: Comment, include: [{ model: User }] }],
-    });
-    //render the post.handlebars templete and pass the post and coments data
-    res.render('post', {
-      post: postData.toJSON(),
-    });
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+        const post = postData.get({plain: true});
+        const comments = post.comments;
+        res.render('post', {
+            post,
+            comments,  
+            logged_in: req.session.logged_in,
+        });
 
-router.get('/dashboard', withAuth, async (req, res) => {
-  console.log(req.session);
-  res.render('dashboard', { name: req.session.name, logged_in: req.session.logged_in });
-});
+
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 router.get('/login', (req, res) => {
-  res.render('login', { name: req.session.name, logged_in: req.session.logged_in });
-}); 
+
+    // If the user is already logged in, redirect the request to another route
+    if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+    }
+
+    res.render('login');
+});
+
+router.get('/home', withAuth, async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.session.user_id, {
+            include: [{ model: Post}],
+        });
+
+        const user = userData.get({plain: true});
+        const posts = user.posts;
+
+        res.render('home', {
+            user,
+            posts,
+            logged_in: req.session.logged_in
+        });
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
 
 router.get('/signup', (req, res) => {
-  res.render('signup', { name: req.session.name, logged_in: req.session.logged_in });
+    if(req.session.logged_in) {
+        res.redirect('/');
+        return;
+    }
+
+    res.render('signup');
 });
 
-//logout route
-router.post('/logout', (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
-});
+router.get('/editpost/:id', withAuth, async (req, res) => {
+    try {
+
+        const postData = await Post.findByPk(req.params.id, {
+            include: [{ model: User }]
+        });
+
+        const post = postData.get({ plain: true });
+
+        res.render('editpost', {
+            post,
+            logged_in: req.session.logged_in, 
+        })
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 module.exports = router;
-
-
-
-
 
 

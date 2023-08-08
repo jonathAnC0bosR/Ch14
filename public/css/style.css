@@ -6,7 +6,7 @@
   padding: 10px;
   margin-bottom: 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
@@ -37,14 +37,14 @@
 }
 
 .nav-link:hover {
-  color: #ff5500;
+  color: #00ff33;
 }
 
 h1 {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #ff5500;
+  background-color: #00ff26;
   color: #fff;
   padding: 10px;
   border-radius: 8px;

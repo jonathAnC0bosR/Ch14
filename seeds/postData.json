@@ -1,15 +1,14 @@
 [
-    {
-      "name": "Madoonateka",
-      "description": "A mobile app about Maddona"
-    },
-    {
-      "name": "The Ultimate REACT GUIDE",
-      "description": "Guide in gist"
-    },
-    {
-      "name": "BooBooBooks",
-      "description": "Find free or pay books"
-    }
+  {
+    "name": "Travel Planner Pro",
+    "description": "An all-in-one mobile app that helps you plan your trips, book accommodations, and discover exciting destinations."
+  },
+  {
+    "name": "Code Master Challenge",
+    "description": "A comprehensive web app that offers users daily coding challenges, tracks their coding skills, and provides detailed analysis."
+  },
+  {
+    "name": "Space Adventure",
+    "description": "Embark on an intergalactic journey in this Windows and macOS game, where players explore distant planets and overcome cosmic challenges."
+  }
 ]
-  
