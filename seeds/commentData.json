@@ -1,18 +1,13 @@
 [
-    {
-      "text": "This is an amazing application. I'm impressed!",
+  {
+      "content": "I agree!",
       "user_id": 1,
       "post_id": 1
-    },
-    {
-      "text": "Extremely useful. Thanks a lot for sharing!",
+  },
+  {
+      "content": "Put can be really hard too!",
       "user_id": 2,
-      "post_id": 1
-    },
-    {
-      "text": "I'm addicted to this game. It's so much fun!",
-      "user_id": 3,
-      "post_id": 3
-    }
-  ]
+      "post_id": 2
+  }
+]
   
